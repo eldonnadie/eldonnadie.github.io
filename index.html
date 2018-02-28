@@ -3,9 +3,39 @@
 <head>
 <title>hector prueba</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script src="js/jquery-3.1.0.min.js"></script>
 <script src="js/randomNumber.js"></script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50" >
 <div>hola!</div>
+
+<div id="r0">0</div>
+<div id="r1">0</div>
+<div id="r2">0</div>
+<div id="r3">0</div>
+<div id="r4">0</div>
+<div id="r5">0</div>
+<div id="r6">0</div>
+<div id="r7">0</div>
+<div id="r8">0</div>
+<div id="r9">0</div>
+
+<script type="text/javascript">
+ function testRuns() {
+	debugger;
+	for(var i = 0; i < 10000; i++) {
+		var randomResult = randomNumber(10);
+		var $randomTag = $('#r'+randomResult);
+		var previousValue = parseInt($randomTag.text());
+		
+		$randomTag.text(previousValue + 1);
+	}
+ }
+ 
+	$(document).ready(function() {
+		testRuns();
+	});
+
+</script>
 </body>
