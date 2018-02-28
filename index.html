@@ -8,7 +8,11 @@
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50" >
-<p>Testing this function, running it 10k times using the number 10 (that is randomNumber(10), we see the following distribution for numbers 0 -> 9. </p>
+
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<h1>Random number problem, solution <a href="https://eldonnadie.github.io/js/randomNumber.js">here</a></h1>
+<p>Testing this function, running it 10k times using the number 10 (that is randomNumber(10), we see the following distribution for numbers 0 -> 9.</p>
 <br/>
 <span>0 -</span> <div id="r0">0</div> <br/>
 <span>1 -</span> <div id="r1">0</div> <br/>
@@ -22,16 +26,15 @@
 <span>9 -</span> <div id="r9">0</div> <br/>
 
 <script type="text/javascript">
- function testRuns() {
-	debugger;
-	for(var i = 0; i < 10000; i++) {
-		var randomResult = randomNumber(10);
-		var $randomTag = $('#r'+randomResult);
-		var previousValue = parseInt($randomTag.text());
-		
-		$randomTag.text(previousValue + 1);
+	function testRuns() {
+		for(var i = 0; i < 10000; i++) {
+			var randomResult = randomNumber(10);
+			var $randomTag = $('#r'+randomResult);
+			var previousValue = parseInt($randomTag.text());
+
+			$randomTag.text(previousValue + 1);
+		}
 	}
- }
  
 	$(document).ready(function() {
 		testRuns();
