@@ -4,7 +4,8 @@ function Timer(timerContainerId) {
 	this.timeUnitTemplateHtml = '<div class="time-unit"><div class="time-unit-body"><label class="time-number">{0}</label><label class="time-description">{1}</label></div>';	
 	this.timerContainerId = timerContainerId;
 	this.$timerContainer = $('#' + timerContainerId);
-	this.initialTime = new Date(2018,01,01);
+	this.initialTime = new Date();
+	
 	this.start = function() {
 		updateTimeDifference();
 	}

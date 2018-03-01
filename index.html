@@ -9,9 +9,18 @@
 <link href="css/scalablepress.css" rel="stylesheet" media="screen">
 </head>
 <body>
-<h1>Timer example</h1>
+<h1>Timer example, code is <a href="https://eldonnadie.github.io/js/timer.js">here</a></h1>
 	<div id="timerContainer"></div>
-<h1>Random number problem, solution <a href="https://eldonnadie.github.io/js/randomNumber.js">here</a></h1>
+	<p>I think this is a very nice solution, you can create instances of the timer function and pass the container where the timer should be created.
+	   Also, it could be cached, I planned to do so, but it was not in the requirements, you could modify the code minimally and add some caching so, the time
+	   count refers the cached initial time instead of just regular time.
+	   
+	   For the template, I know it looks a bit bad to have it in a string literal, but, considering the size of this problem, no constraints were given for
+	   such a small project, I am aware I could keep the template in a separate file and load as many templates needed using something like require.js or pure js.
+	   
+	   There were no specifications to add months, years, etc...
+	</p>
+<h1>Random number problem, code is <a href="https://eldonnadie.github.io/js/randomNumber.js">here</a></h1>
 <p>Testing this function, running it 10k times using the number 10 (that is randomNumber(10)), we see the following distribution for numbers 0 -> 9.</p>
 <br/>
 <span>0 -</span> <div id="r0">0</div> <br/>
