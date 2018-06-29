@@ -5,14 +5,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <script src="js/jquery-3.1.0.min.js"></script>
 <script src="js/randomNumber.js"></script>
+<script src="js/timer.js"></script>
+<link href="css/scalablepress.css" rel="stylesheet" media="screen">
 </head>
-
-<body data-spy="scroll" data-target=".navbar" data-offset="50" >
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<body>
+<h1>Timer example</h1>
+	<div id="timerContainer"></div>
 <h1>Random number problem, solution <a href="https://eldonnadie.github.io/js/randomNumber.js">here</a></h1>
-<p>Testing this function, running it 10k times using the number 10 (that is randomNumber(10), we see the following distribution for numbers 0 -> 9.</p>
+<p>Testing this function, running it 10k times using the number 10 (that is randomNumber(10)), we see the following distribution for numbers 0 -> 9.</p>
 <br/>
 <span>0 -</span> <div id="r0">0</div> <br/>
 <span>1 -</span> <div id="r1">0</div> <br/>
@@ -38,6 +38,8 @@
  
 	$(document).ready(function() {
 		testRuns();
+		var timer = new Timer('timerContainer');
+		timer.start();
 	});
 
 </script>
