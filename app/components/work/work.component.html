@@ -1,0 +1,41 @@
+<div class="ti-banner" fxLayout="row" fxLayoutAlign="start center">
+    <div class="portfolio-tittle-container" fxFlex="50%" fxFlex.lt-sm="60%">
+        <p class="porfolio_title">Design Portfolio</p>
+    </div>
+</div>
+<div class="work-content">
+
+    <div class="selected-work-men-container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start center"
+        style="width:100%">
+        <div fxFlex="50%" fxLayoutAlign="center">
+            <h2 class="banner-title">Selected Works</h2>
+        </div>
+        <div class="filler"></div>
+        <div>
+            <a mat-button [ngClass]="selOption=='all' ? 'active-link' : ''" (click)="filterProjects('all')">All</a>
+            <a mat-button [ngClass]="selOption=='ui' ? 'active-link' : ''" (click)="filterProjects('ui')">UI / UX</a>
+            <a mat-button [ngClass]="selOption=='other' ? 'active-link' : ''"
+                (click)="filterProjects('other')">Other</a>
+        </div>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="space-around">
+        <div *ngFor="let project of filteredWorks" fxFlex.gt-xs="30" fxFlex.xs="90" class="thumbnail-card"
+            ngClass.xs="xs-margin">
+            <div ngClass.gt-xs="view overlay">
+                <a (click)="goToWorkComponent(project)">
+                    <img src="{{project.thumbnailUrl}}" alt="{{project.projectTitle}}" class="img-fluid img-thumbnail">
+                </a>
+                <div class="mask flex-center rgba-black-strong" fxShow fxHide.xs="true"
+                (click)="goToWorkComponent(project)">>
+                    <p class="white-text">{{project.projectTitle}}</p>
+                </div>
+                <div fxHide fxShow.xs="true" fxLayout="row" fxLayoutAlign="center">
+                    <span>{{project.projectTitle}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <br />
+</div>

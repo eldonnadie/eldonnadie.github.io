@@ -1,0 +1,38 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+
+        <button mat-icon-button (click)="snav.toggle()" fxHide fxShow.lt-sm="true">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <img src="../assets/logo-MARIKIMI.png" class="logo-nav" />
+        <span class="filler"></span>
+
+        <a mat-button [ngClass]="home ? 'active-link' : ''" [routerLink]="['work']" routerLinkActive="active-link"
+            fxShow fxHide.lt-sm="true">Work</a>
+        <a mat-button (click)="home=false" routerLink="/about" routerLinkActive="active-link" fxShow
+            fxHide.lt-sm="true"> About</a>
+        <a mat-button (click)="home=false" routerLink="/contact" routerLinkActive="active-link" fxShow
+            fxHide.lt-sm="true">Contact</a>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row *ngIf="breadcrumbVisible" style="background-color:#ffffff; height:5%;">
+        <span style="color:#346166; font-weight: 300; font-size: 0.7em;">
+            Home / Work / {{currentTitle}}
+        </span>
+    </mat-toolbar-row>
+
+</mat-toolbar>
+<div>
+    <mat-drawer-container>
+        <mat-drawer #snav [mode]="'over'" fxHide fxShow.lt-sm="true">
+            <mat-nav-list fxLayout="column" fxLayoutAlign="center center">
+                <a mat-list-item routerLink="/work" routerLinkActive="active-link">Work</a>
+                <a mat-list-item routerLink="/about" routerLinkActive="active-link">About</a>
+                <a mat-list-item routerLink="/contact" routerLinkActive="active-link">Contact</a>
+            </mat-nav-list>
+        </mat-drawer>
+        <mat-drawer-content>
+            <router-outlet></router-outlet>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

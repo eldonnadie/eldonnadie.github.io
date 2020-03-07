@@ -1,55 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>hector prueba</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<script src="js/jquery-3.1.0.min.js"></script>
-<script src="js/randomNumber.js"></script>
-<script src="js/timer.js"></script>
-<link href="css/scalablepress.css" rel="stylesheet" media="screen">
+<!doctype html>
+<html lang="en">
+<head >
+  <meta charset="utf-8">
+  <title>Portfolio</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico"> 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-<h1>Timer example, code is <a href="https://eldonnadie.github.io/js/timer.js">here</a></h1>
-	<div id="timerContainer"></div>
-	<p>I think this is a very nice solution, you can create instances of the timer function and pass the container where the timer should be created.
-	   Also, it could be cached, I planned to do so, but it was not in the requirements, you could modify the code minimally and add some caching so, the time
-	   count refers the cached initial time instead of just regular time.
-	   
-	   For the template, I know it looks a bit bad to have it in a string literal, but, considering the size of this problem, no constraints were given for
-	   such a small project, I am aware I could keep the template in a separate file and load as many templates needed using something like require.js or pure js.
-	   
-	   There were no specifications to add months, years, etc...
-	</p>
-<h1>Random number problem, code is <a href="https://eldonnadie.github.io/js/randomNumber.js">here</a></h1>
-<p>Testing this function, running it 10k times using the number 10 (that is randomNumber(10)), we see the following distribution for numbers 0 -> 9.</p>
-<br/>
-<span>0 -</span> <div id="r0">0</div> <br/>
-<span>1 -</span> <div id="r1">0</div> <br/>
-<span>2 -</span> <div id="r2">0</div> <br/>
-<span>3 -</span> <div id="r3">0</div> <br/>
-<span>4 -</span> <div id="r4">0</div> <br/>
-<span>5 -</span> <div id="r5">0</div> <br/>
-<span>6 -</span> <div id="r6">0</div> <br/>
-<span>7 -</span> <div id="r7">0</div> <br/>
-<span>8 -</span> <div id="r8">0</div> <br/>
-<span>9 -</span> <div id="r9">0</div> <br/>
-
-<script type="text/javascript">
-	function testRuns() {
-		for(var i = 0; i < 10000; i++) {
-			var randomResult = randomNumber(10);
-			var $randomTag = $('#r'+randomResult);
-			var previousValue = parseInt($randomTag.text());
-
-			$randomTag.text(previousValue + 1);
-		}
-	}
- 
-	$(document).ready(function() {
-		testRuns();
-		var timer = new Timer('timerContainer');
-		timer.start();
-	});
-
-</script>
+<body class="general-typography">
+  <app-root></app-root>
 </body>
+</html>

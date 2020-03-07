@@ -1,0 +1,40 @@
+<div fxLayout="row" fxLayoutAlign="space-around">
+    <div fxFlex="90%">
+        <img class="project-description-img" src="../../assets/project-detail/beautytree.png" />
+    </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="space-around" class="project-description">
+    <div fxFlex="90%">
+        <p class="project-details-title">Project Details</p>
+        <div class="project-ditails-container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around top">
+            <div fxLayout="column" fxLayoutAlign="top" style="margin-left:50px;" fxFlex="70%">
+                <div>
+                    <p class="project-details-subtitle subtitle-margin">Role</p>
+                    <p class="project-details-text">{{selProject.role}}</p>
+                </div>
+                <div>
+                    <p class="project-details-subtitle">Challenge</p>
+                    <p class="project-details-text" *ngFor="let challenge of selProject.challenges">
+                        {{challenge}}
+                    </p>
+                </div>
+                <div>
+                    <p class="project-details-subtitle">Purpose</p>
+                    <p class="project-details-text">{{selProject.purpose}}</p>
+                </div>
+            </div>
+            <div fxLayout="column" fxLayout.xs="column" fxLayoutAlign="top" style="margin-left:50px;" fxFlex="30%">
+                <div>
+                    <p class="project-details-subtitle subtitle-margin">Main Tools</p>
+                    <div fxLayout="row" *ngFor="let link of selProject.tools">
+                        <img class="tool-icon" src="../../../assets/tool_logos/{{link}}" alt="Tool">
+                    </div>
+                </div>
+                <div>
+                    <p class="project-details-subtitle">Date</p>
+                    <p class="project-details-text" style="padding-bottom:50px;">{{selProject.date}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
